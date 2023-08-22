@@ -6,15 +6,15 @@
   
   <title>java极速版 | 王汪旺</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="java 学习笔记面向对象基础语法1、初识对象 方法 如果参数的类型(含义)相同，但是个数不确定的场合，JVM提供了可变参数 ： 参数的长度可变   参数类型…参数名     123&gt;void printUser( int age, String... name  ) &amp;#123;       System.out.println(name);   &amp;#125;   静态方法  成员方法可以">
+  <meta name="description" content="java 学习笔记面向对象基础语法1、初识对象 方法 如果参数的类型(含义)相同，但是个数不确定的场合，JVM提供了可变参数 ： 参数的长度可变   参数类型…参数名    123void printUser( int age, String... name  ) &amp;#123;        System.out.println(name);    &amp;#125;   静态方法  成员方法可以访问静">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java极速版">
 <meta property="og:url" content="http://example.com/2023/08/22/java%E6%9E%81%E9%80%9F%E7%89%88/index.html">
 <meta property="og:site_name" content="王汪旺">
-<meta property="og:description" content="java 学习笔记面向对象基础语法1、初识对象 方法 如果参数的类型(含义)相同，但是个数不确定的场合，JVM提供了可变参数 ： 参数的长度可变   参数类型…参数名     123&gt;void printUser( int age, String... name  ) &amp;#123;       System.out.println(name);   &amp;#125;   静态方法  成员方法可以">
+<meta property="og:description" content="java 学习笔记面向对象基础语法1、初识对象 方法 如果参数的类型(含义)相同，但是个数不确定的场合，JVM提供了可变参数 ： 参数的长度可变   参数类型…参数名    123void printUser( int age, String... name  ) &amp;#123;        System.out.println(name);    &amp;#125;   静态方法  成员方法可以访问静">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-08-22T11:59:42.000Z">
-<meta property="article:modified_time" content="2023-08-22T12:00:23.812Z">
+<meta property="article:modified_time" content="2023-08-22T12:07:26.383Z">
 <meta property="article:author" content="隽彦">
 <meta name="twitter:card" content="summary">
   
@@ -107,9 +107,8 @@
 </ul>
 </li>
 </ul>
-<blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">void</span> <span class="title function_">printUser</span><span class="params">( <span class="type">int</span> age, String... name  )</span> &#123;</span><br><span class="line">       System.out.println(name);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">printUser</span><span class="params">( <span class="type">int</span> age, String... name  )</span> &#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>静态方法</p>
 <ul>
@@ -191,25 +190,133 @@
 </li>
 <li><p>单例模式</p>
 <ul>
-<li><p>类的创建过程复杂， 类的对象消耗资源，不希望创建太多实例</p>
-</li>
-<li><pre><code class="java">  class User19 &#123;
-      private static User19 user19 = null;
-      private User19() &#123;
-      &#125;
-      public static User19 getInstance() &#123;
-          if ( user19 == null ) &#123;
-              user19 = new User19();
-          &#125;
-          return user19;
-      &#125;
-  &#125;
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	* final关键字</span><br><span class="line">		* Java中提供了一种语法，可以在数据初始化后不被修改,使用关键字final</span><br><span class="line">		* final可以修饰变量：变量的值一旦初始化后无法修改</span><br><span class="line">		* final可以修饰属性：那么JVM无法自动进行初始化，需要自己进行初始化, 属性值不能发生变化</span><br><span class="line">		* 一般将final修饰的变量称之为常量，或者叫不可变变量</span><br><span class="line">		* final可以修饰方法，这个方法不能被子类重写</span><br><span class="line">		* final可以修饰类，这样类就没有子类了</span><br><span class="line">		* final不可以修饰构造方法</span><br><span class="line">		* final可以修改方法的参数，一旦修饰，参数就无法修改。</span><br><span class="line">	* 抽象（抽象类、抽象方法）</span><br><span class="line">		* 抽象方法：只有声明，没有实现的方法。 abstract 返回值类型 方法名（参数）</span><br><span class="line">		* 抽象类 : 不完整的类，就是抽象类。abstract class 类名。  因为类不完整，所以无法直接构造对象</span><br><span class="line">		*  如果一个类中含有抽象方法，那么这个类是抽象类</span><br><span class="line">		*  如果一个类是抽象类，它的方法不一定是抽象方法。</span><br><span class="line">		*  抽象类无法直接构建对象，但是可以通过子类间接构建对象</span><br><span class="line">		* 如果抽象类中含有抽象方法，那么子类继承抽象类，需要重写抽象方法，将方法补充完整。</span><br><span class="line">	* 接口</span><br><span class="line">		* 所谓的接口，可以简单理解为规则</span><br><span class="line">		*  基本语法 ： interface 接口名称 &#123; 规则属性，规则的行为 &#125;</span><br><span class="line">		* 接口其实是抽象的</span><br><span class="line">		*  规则的属性必须为固定值，而且不能修改。</span><br><span class="line">		*  属性和行为的访问权限必须为公共的。</span><br><span class="line">		*  属性应该是静态的</span><br><span class="line">		*  行为应该是抽象的</span><br><span class="line">		*  接口和类是两个层面的东西</span><br><span class="line">		* 接口可以继承其他接口</span><br><span class="line">		*  类的对象需要遵循接口，在java中，这个遵循，称之为实现(implements)，类需要实现接口,而且可以实现多个接口</span><br><span class="line">	* 枚举</span><br><span class="line">		* 枚举是一个特殊的类，其中包含了一组特定的对象，这些对象不会发生改变, 一般都使用大写的标识符</span><br><span class="line">		*  枚举使用enum关键字使用</span><br><span class="line">		*  枚举类会将对象放置在最前面，那么和后面的语法需要使用分号隔开</span><br><span class="line">		*  枚举类不能创建对象，它的对象是在内部自行创建</span><br><span class="line">	* 匿名类</span><br><span class="line">		* 在模型场合下，类的名字不重要，我们指向使用类中的方法或功能。那么此时我们可以采用特殊的语法：匿名类</span><br><span class="line">		*  所谓的匿名类，就是没有名字的类</span><br><span class="line">	* Bean规范</span><br><span class="line">		* 主要用于编写逻辑，建立数据模型(Bean)</span><br><span class="line">		*  Bean类得设计规范：Bean规范</span><br><span class="line">		* 类要求必须含有无参，公共得构造方法</span><br><span class="line">		* 属性必须私有化，然后提供公共得，set，get方法</span><br><span class="line">	* 作用域</span><br><span class="line">		</span><br><span class="line">		* 如果属性和（局部）变量的名称相同，访问时如果不加修饰符，那么优先访问变量。</span><br><span class="line"></span><br><span class="line">### 常见类和对象</span><br><span class="line"></span><br><span class="line">#### 1、Object</span><br><span class="line"></span><br><span class="line">* toString方法默认返回内存地址</span><br><span class="line">* hashCode()方法返回的也是内存地址</span><br><span class="line">* equals()方法。判断两个对象是否相等, 如果相等，那么返回true，否则返回false。equals方法比较对象时，默认比较就是内存地址。</span><br><span class="line">*  getClass获取对象的类型信息</span><br><span class="line"></span><br><span class="line">#### 2、数组</span><br><span class="line"></span><br><span class="line">* </span><br><span class="line"></span><br><span class="line">#### 3、字符串</span><br><span class="line"></span><br><span class="line">* 字符串拼接</span><br><span class="line"></span><br><span class="line">	* +</span><br><span class="line">	* a.concat(b)</span><br><span class="line"></span><br><span class="line">* 字符串比较</span><br><span class="line"></span><br><span class="line">	* 相等a.equals(b)</span><br><span class="line">	* 忽略大小写的相等：a.equalsIgnoreCase(b)</span><br><span class="line">	* int i= a.compareTo(b)</span><br><span class="line">		* i = 正数，a &gt; b</span><br><span class="line">		* i = 负数，a &lt; b</span><br><span class="line">		* i = 0, a = b</span><br><span class="line">		* 忽略大小写 int i = a.compareToIgnoreCase(b)</span><br><span class="line"></span><br><span class="line">* 字符串截取</span><br><span class="line"></span><br><span class="line">	* str.substring(a,b) a起始位置，b结束为止，不包括b ,也就是[a,b).</span><br><span class="line">	* 如果只传递一个参数，那么就表示从指定位置开始截取字符串，然后截取到最后</span><br><span class="line"></span><br><span class="line">* 分解字符串</span><br><span class="line"></span><br><span class="line">	* 根据指定的规则对字符串进行分解。可以将一个完整的字符串，分解成几个部分。</span><br><span class="line">	* String[] s1 = s.split(&quot;,&quot;)</span><br><span class="line"></span><br><span class="line">* 去掉首位空格</span><br><span class="line"></span><br><span class="line">	* s.trim()</span><br><span class="line"></span><br><span class="line">* 字符串替换</span><br><span class="line"></span><br><span class="line">	* s.replace(traget, replacement)</span><br><span class="line"></span><br><span class="line">	* s.replaceAll()  </span><br><span class="line"></span><br><span class="line">	* ```java</span><br><span class="line">		String s = &quot;Hello World zhangsan&quot;; // Hello Java Java</span><br><span class="line">		System.out.println(s.replace(&quot;World zhangsan&quot;, &quot;Java&quot;));</span><br><span class="line">		//replaceAll按照指定的规则进行替换</span><br><span class="line">		System.out.println(s.replaceAll(&quot;World|zhangsan&quot;, &quot;Java&quot;));</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<li>类的创建过程复杂， 类的对象消耗资源，不希望创建太多实例</li>
 </ul>
 </li>
 </ul>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">User19</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">User19</span> <span class="variable">user19</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">User19</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> User19 <span class="title function_">getInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> ( user19 == <span class="literal">null</span> ) &#123;</span><br><span class="line">            user19 = <span class="keyword">new</span> <span class="title class_">User19</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> user19;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>final关键字</p>
+<ul>
+<li>Java中提供了一种语法，可以在数据初始化后不被修改,使用关键字final</li>
+<li>final可以修饰变量：变量的值一旦初始化后无法修改</li>
+<li>final可以修饰属性：那么JVM无法自动进行初始化，需要自己进行初始化, 属性值不能发生变化</li>
+<li>一般将final修饰的变量称之为常量，或者叫不可变变量</li>
+<li>final可以修饰方法，这个方法不能被子类重写</li>
+<li>final可以修饰类，这样类就没有子类了</li>
+<li>final不可以修饰构造方法</li>
+<li>final可以修改方法的参数，一旦修饰，参数就无法修改。</li>
+</ul>
+</li>
+<li><p>抽象（抽象类、抽象方法）</p>
+<ul>
+<li>抽象方法：只有声明，没有实现的方法。 abstract 返回值类型 方法名（参数）</li>
+<li>抽象类 : 不完整的类，就是抽象类。abstract class 类名。  因为类不完整，所以无法直接构造对象</li>
+<li>如果一个类中含有抽象方法，那么这个类是抽象类</li>
+<li>如果一个类是抽象类，它的方法不一定是抽象方法。</li>
+<li>抽象类无法直接构建对象，但是可以通过子类间接构建对象</li>
+<li>如果抽象类中含有抽象方法，那么子类继承抽象类，需要重写抽象方法，将方法补充完整。</li>
+</ul>
+</li>
+<li><p>接口</p>
+<ul>
+<li>所谓的接口，可以简单理解为规则</li>
+<li>基本语法 ： interface 接口名称 { 规则属性，规则的行为 }</li>
+<li>接口其实是抽象的</li>
+<li>规则的属性必须为固定值，而且不能修改。</li>
+<li>属性和行为的访问权限必须为公共的。</li>
+<li>属性应该是静态的</li>
+<li>行为应该是抽象的</li>
+<li>接口和类是两个层面的东西</li>
+<li>接口可以继承其他接口</li>
+<li>类的对象需要遵循接口，在java中，这个遵循，称之为实现(implements)，类需要实现接口,而且可以实现多个接口</li>
+</ul>
+</li>
+<li><p>枚举</p>
+<ul>
+<li>枚举是一个特殊的类，其中包含了一组特定的对象，这些对象不会发生改变, 一般都使用大写的标识符</li>
+<li>枚举使用enum关键字使用</li>
+<li>枚举类会将对象放置在最前面，那么和后面的语法需要使用分号隔开</li>
+<li>枚举类不能创建对象，它的对象是在内部自行创建</li>
+</ul>
+</li>
+<li><p>匿名类</p>
+<ul>
+<li>在模型场合下，类的名字不重要，我们指向使用类中的方法或功能。那么此时我们可以采用特殊的语法：匿名类</li>
+<li>所谓的匿名类，就是没有名字的类</li>
+</ul>
+</li>
+<li><p>Bean规范</p>
+<ul>
+<li>主要用于编写逻辑，建立数据模型(Bean)</li>
+<li>Bean类得设计规范：Bean规范</li>
+<li>类要求必须含有无参，公共得构造方法</li>
+<li>属性必须私有化，然后提供公共得，set，get方法</li>
+</ul>
+</li>
+<li><p>作用域</p>
+<ul>
+<li>如果属性和（局部）变量的名称相同，访问时如果不加修饰符，那么优先访问变量。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常见类和对象"><a href="#常见类和对象" class="headerlink" title="常见类和对象"></a>常见类和对象</h3><h4 id="1、Object"><a href="#1、Object" class="headerlink" title="1、Object"></a>1、Object</h4><ul>
+<li>toString方法默认返回内存地址</li>
+<li>hashCode()方法返回的也是内存地址</li>
+<li>equals()方法。判断两个对象是否相等, 如果相等，那么返回true，否则返回false。equals方法比较对象时，默认比较就是内存地址。</li>
+<li>getClass获取对象的类型信息</li>
+</ul>
+<h4 id="2、数组"><a href="#2、数组" class="headerlink" title="2、数组"></a>2、数组</h4><p>* </p>
+<h4 id="3、字符串"><a href="#3、字符串" class="headerlink" title="3、字符串"></a>3、字符串</h4><ul>
+<li><p>字符串拼接</p>
+<ul>
+<li><ul>
+<li></li>
+</ul>
+</li>
+<li>a.concat(b)</li>
+</ul>
+</li>
+<li><p>字符串比较</p>
+<ul>
+<li>相等a.equals(b)</li>
+<li>忽略大小写的相等：a.equalsIgnoreCase(b)</li>
+<li>int i&#x3D; a.compareTo(b)<ul>
+<li>i &#x3D; 正数，a &gt; b</li>
+<li>i &#x3D; 负数，a &lt; b</li>
+<li>i &#x3D; 0, a &#x3D; b</li>
+<li>忽略大小写 int i &#x3D; a.compareToIgnoreCase(b)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>字符串截取</p>
+<ul>
+<li>str.substring(a,b) a起始位置，b结束为止，不包括b ,也就是[a,b).</li>
+<li>如果只传递一个参数，那么就表示从指定位置开始截取字符串，然后截取到最后</li>
+</ul>
+</li>
+<li><p>分解字符串</p>
+<ul>
+<li>根据指定的规则对字符串进行分解。可以将一个完整的字符串，分解成几个部分。</li>
+<li>String[] s1 &#x3D; s.split(“,”)</li>
+</ul>
+</li>
+<li><p>去掉首位空格</p>
+<ul>
+<li>s.trim()</li>
+</ul>
+</li>
+<li><p>字符串替换</p>
+<ul>
+<li><p>s.replace(traget, replacement)</p>
+</li>
+<li><p>s.replaceAll()</p>
+</li>
+</ul>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;Hello World zhangsan&quot;</span>; <span class="comment">// Hello Java Java</span></span><br><span class="line">System.out.println(s.replace(<span class="string">&quot;World zhangsan&quot;</span>, <span class="string">&quot;Java&quot;</span>));</span><br><span class="line"><span class="comment">//replaceAll按照指定的规则进行替换</span></span><br><span class="line">System.out.println(s.replaceAll(<span class="string">&quot;World|zhangsan&quot;</span>, <span class="string">&quot;Java&quot;</span>));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>字符串的大小写转换</p>
 <ul>
@@ -225,47 +332,26 @@
 </li>
 <li><p>lastIndexOf方法用于获取数据在字符串中最后一次出现的位置</p>
 </li>
-<li><pre><code class="java">  // 是否包含指定的字符串，返回布尔类型
-  System.out.println(s.contains(&quot;Hello123&quot;));
-  // 判断字符串是否以指定的数据开头，返回布尔类型
-  System.out.println(s.startsWith(&quot;Hello&quot;));
-  // 判断字符串是否以指定的数据结尾，返回布尔类型
-  System.out.println(s.endsWith(&quot;World&quot;));
-  // 判断字符串是否为空，空格其实是一个特殊的字符，所以看不到，但是不为空。
-  System.out.println(s.isEmpty());
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* StringBuilder: 构建字符串</span><br><span class="line"></span><br><span class="line">	* ```java</span><br><span class="line">		StringBuilder s = new StringBuilder();</span><br><span class="line">		for ( int i = 0; i &lt; 100; i++ ) &#123;</span><br><span class="line">		    s.append(i);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(s.toString());</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
 </ul>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否包含指定的字符串，返回布尔类型</span></span><br><span class="line">System.out.println(s.contains(<span class="string">&quot;Hello123&quot;</span>));</span><br><span class="line"><span class="comment">// 判断字符串是否以指定的数据开头，返回布尔类型</span></span><br><span class="line">System.out.println(s.startsWith(<span class="string">&quot;Hello&quot;</span>));</span><br><span class="line"><span class="comment">// 判断字符串是否以指定的数据结尾，返回布尔类型</span></span><br><span class="line">System.out.println(s.endsWith(<span class="string">&quot;World&quot;</span>));</span><br><span class="line"><span class="comment">// 判断字符串是否为空，空格其实是一个特殊的字符，所以看不到，但是不为空。</span></span><br><span class="line">System.out.println(s.isEmpty());</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>StringBuilder: 构建字符串</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuilder</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++ ) &#123;</span><br><span class="line">    s.append(i);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s.toString());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="4、包装类"><a href="#4、包装类" class="headerlink" title="4、包装类"></a>4、包装类</h4><ul>
-<li><pre><code class="java">  int i = 10;
-  // TODO 将基本数据类型转换为包装类型
-  // 自动装箱
-  //Integer i1 = Integer.valueOf(i);
-  Integer i1 = i;
-  // 自动拆箱
-  //int i2 = i1.intValue();
-  int i2 = i1;
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 5、日期类</span><br><span class="line"></span><br><span class="line">##### Date日期类</span><br><span class="line"></span><br><span class="line">* ```java</span><br><span class="line">	Date d = new Date();</span><br><span class="line">	System.out.println(d);</span><br><span class="line">	</span><br><span class="line">	// Java格式化日期格式：</span><br><span class="line">	// y (Y) -&gt; 年 -&gt; yyyy</span><br><span class="line">	// m (M) -&gt; MM : 月份，mm:分钟</span><br><span class="line">	// d (D) -&gt; dd : 一个月中的日期，D：一年中的日期</span><br><span class="line">	// h (H) -&gt; h : 12进制， HH：24进制</span><br><span class="line">	// s (S) -&gt; s : 秒，S :毫秒</span><br><span class="line">	</span><br><span class="line">	// Date -&gt; String</span><br><span class="line">	SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">	String dateFormatString = sdf.format(d);</span><br><span class="line">	System.out.println(dateFormatString);</span><br><span class="line">	</span><br><span class="line">	// String -&gt; Date</span><br><span class="line">	String dateString = &quot;2022-06-01&quot;;</span><br><span class="line">	Date parseDate = sdf.parse(dateString);</span><br><span class="line">	System.out.println(parseDate);</span><br><span class="line">	</span><br><span class="line">	// 根据时间戳构建指定的日期对象。</span><br><span class="line">	//d.setTime(System.currentTimeMillis());</span><br><span class="line">	// 获取时间戳</span><br><span class="line">	//d.getTime();</span><br><span class="line">	</span><br><span class="line">	System.out.println(parseDate.before(d));</span><br><span class="line">	System.out.println(parseDate.after(d));</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<h4 id="4、包装类"><a href="#4、包装类" class="headerlink" title="4、包装类"></a>4、包装类</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="comment">// TODO 将基本数据类型转换为包装类型</span></span><br><span class="line"><span class="comment">// 自动装箱</span></span><br><span class="line"><span class="comment">//Integer i1 = Integer.valueOf(i);</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">i1</span> <span class="operator">=</span> i;</span><br><span class="line"><span class="comment">// 自动拆箱</span></span><br><span class="line"><span class="comment">//int i2 = i1.intValue();</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i2</span> <span class="operator">=</span> i1;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、日期类"><a href="#5、日期类" class="headerlink" title="5、日期类"></a>5、日期类</h4><h5 id="Date日期类"><a href="#Date日期类" class="headerlink" title="Date日期类"></a>Date日期类</h5> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Date</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">System.out.println(d);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Java格式化日期格式：</span></span><br><span class="line"><span class="comment">// y (Y) -&gt; 年 -&gt; yyyy</span></span><br><span class="line"><span class="comment">// m (M) -&gt; MM : 月份，mm:分钟</span></span><br><span class="line"><span class="comment">// d (D) -&gt; dd : 一个月中的日期，D：一年中的日期</span></span><br><span class="line"><span class="comment">// h (H) -&gt; h : 12进制， HH：24进制</span></span><br><span class="line"><span class="comment">// s (S) -&gt; s : 秒，S :毫秒</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Date -&gt; String</span></span><br><span class="line"><span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">dateFormatString</span> <span class="operator">=</span> sdf.format(d);</span><br><span class="line">System.out.println(dateFormatString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String -&gt; Date</span></span><br><span class="line"><span class="type">String</span> <span class="variable">dateString</span> <span class="operator">=</span> <span class="string">&quot;2022-06-01&quot;</span>;</span><br><span class="line"><span class="type">Date</span> <span class="variable">parseDate</span> <span class="operator">=</span> sdf.parse(dateString);</span><br><span class="line">System.out.println(parseDate);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据时间戳构建指定的日期对象。</span></span><br><span class="line"><span class="comment">//d.setTime(System.currentTimeMillis());</span></span><br><span class="line"><span class="comment">// 获取时间戳</span></span><br><span class="line"><span class="comment">//d.getTime();</span></span><br><span class="line"></span><br><span class="line">System.out.println(parseDate.before(d));</span><br><span class="line">System.out.println(parseDate.after(d));</span><br></pre></td></tr></table></figure>
+
+<h5 id="Calender日历类"><a href="#Calender日历类" class="headerlink" title="Calender日历类"></a>Calender日历类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Calendar</span> <span class="variable">instance</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line"><span class="comment">//System.out.println(instance);</span></span><br><span class="line"></span><br><span class="line">System.out.println(instance.get(Calendar.YEAR));</span><br><span class="line">System.out.println(instance.get(Calendar.MONTH));</span><br><span class="line">System.out.println(instance.get(Calendar.DATE));</span><br><span class="line"><span class="comment">//System.out.println(instance.get(Calendar.DAY));</span></span><br><span class="line"></span><br><span class="line">instance.setTime(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">instance.add(Calendar.YEAR, -<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>java异常主要有两类</p>
+<ul>
+<li>可以通过代码恢复正常逻辑的异常,称之为运行期异常。（RuntimeException）</li>
+<li>不可以通过代码恢复正常逻辑的异常,称之为编译期期异常(Exception)</li>
 </ul>
-<h5 id="Calender日历类"><a href="#Calender日历类" class="headerlink" title="Calender日历类"></a>Calender日历类</h5><ul>
-<li><pre><code class="java">  Calendar instance = Calendar.getInstance();
-  //System.out.println(instance);
-  
-  System.out.println(instance.get(Calendar.YEAR));
-  System.out.println(instance.get(Calendar.MONTH));
-  System.out.println(instance.get(Calendar.DATE));
-  //System.out.println(instance.get(Calendar.DAY));
-  
-  instance.setTime(new Date());
-  instance.add(Calendar.YEAR, -1);
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 异常</span><br><span class="line"></span><br><span class="line">java异常主要有两类</span><br><span class="line"></span><br><span class="line">*  可以通过代码恢复正常逻辑的异常,称之为运行期异常。（RuntimeException）</span><br><span class="line">*  不可以通过代码恢复正常逻辑的异常,称之为编译期期异常(Exception)</span><br><span class="line"></span><br><span class="line">#### 基础语法</span><br><span class="line"></span><br><span class="line">* ```java</span><br><span class="line">	//try :尝试</span><br><span class="line">	//catch :  捕捉</span><br><span class="line">	//       捕捉多个异常的时候，需要先捕捉范围小的异常，然后再捕捉范围大的异常</span><br><span class="line">	//finally : 最终</span><br><span class="line">	try &#123;</span><br><span class="line">	             可能会出现异常的代码</span><br><span class="line">	             如果出现异常，那么JVM会将异常进行封装，形成一个具体的异常类，然后将这个异常抛出</span><br><span class="line">	             所有的异常对象都可以被抛出</span><br><span class="line">	         &#125; catch ( 抛出的异常对象 对象引用 ) &#123;</span><br><span class="line">	             异常的解决方案</span><br><span class="line">	            //e.getMessage() // 错误的消息</span><br><span class="line">	            //e.getCause()	// 错误的原因</span><br><span class="line">	            //e.printStackTrace();</span><br><span class="line">	         &#125; catch () &#123;</span><br><span class="line">	</span><br><span class="line">	         &#125; finally &#123;</span><br><span class="line">	            最终执行的代码逻辑</span><br><span class="line">	         &#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<h4 id="基础语法-1"><a href="#基础语法-1" class="headerlink" title="基础语法"></a>基础语法</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//try :尝试</span></span><br><span class="line"><span class="comment">//catch :  捕捉</span></span><br><span class="line"><span class="comment">//       捕捉多个异常的时候，需要先捕捉范围小的异常，然后再捕捉范围大的异常</span></span><br><span class="line"><span class="comment">//finally : 最终</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">             可能会出现异常的代码</span><br><span class="line">             如果出现异常，那么JVM会将异常进行封装，形成一个具体的异常类，然后将这个异常抛出</span><br><span class="line">             所有的异常对象都可以被抛出</span><br><span class="line">         &#125; <span class="keyword">catch</span> ( 抛出的异常对象 对象引用 ) &#123;</span><br><span class="line">             异常的解决方案</span><br><span class="line">            <span class="comment">//e.getMessage() // 错误的消息</span></span><br><span class="line">            <span class="comment">//e.getCause()	// 错误的原因</span></span><br><span class="line">            <span class="comment">//e.printStackTrace();</span></span><br><span class="line">         &#125; <span class="keyword">catch</span> () &#123;</span><br><span class="line"></span><br><span class="line">         &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            最终执行的代码逻辑</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>常见异常</p>
 <ul>
 <li>除数为0的算术异常:java.lang.ArithmeticException</li>
@@ -288,7 +374,7 @@
               throw new Exception();
           &#125;
   &#125;
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 自定义异常</span><br><span class="line"></span><br><span class="line">### 进阶语法-集合</span><br><span class="line"></span><br><span class="line">#### 介绍</span><br><span class="line"></span><br><span class="line">* Java中的集合是一个名词，数据的一种容器，用于容纳数据</span><br><span class="line"></span><br><span class="line">* 位于java.util包里</span><br><span class="line"></span><br><span class="line">* ```java</span><br><span class="line">	// 问题：什么时候需要一个容纳数据的容器，也就是集合对象？</span><br><span class="line">	//            Java集合框架中就包含了对不确定个数的数据处理的集合类</span><br><span class="line">	// 问题：如果只是为了容纳数据，可以是直接使用数组，为什么要学习集合？</span><br><span class="line">	//           数组使用起来不方便。在数据个数不确定的场合，数组使用起来不是很方便</span><br><span class="line">	</span><br><span class="line">	// 总结：对不确定的有关系的数据进行相同的逻辑处理的场合，使用集合是一个不错的选择</span><br><span class="line">	</span><br><span class="line">	// 根据数据的不同，Java的集合分为2大体系：</span><br><span class="line">	// 1. 单一数据体系 ： Collection接口定义了相关的规则</span><br><span class="line">	// 2. 成对出现的数据体系 ： Map接口定义了相关的规则</span><br><span class="line">	//    所谓的成对的数据，就是2个数据有关系，可以根据第一个数据关联到第二个数据</span><br><span class="line">	//    也称之为键值对数据 ，(123123, zhangsan) =&gt; (key, value)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 自定义异常</span><br><span class="line"></span><br><span class="line">### 进阶语法-集合</span><br><span class="line"></span><br><span class="line">#### 介绍</span><br><span class="line"></span><br><span class="line">* Java中的集合是一个名词，数据的一种容器，用于容纳数据</span><br><span class="line"></span><br><span class="line">* 位于java.util包里</span><br><span class="line"></span><br><span class="line"> ```java</span><br><span class="line">	// 问题：什么时候需要一个容纳数据的容器，也就是集合对象？</span><br><span class="line">	//            Java集合框架中就包含了对不确定个数的数据处理的集合类</span><br><span class="line">	// 问题：如果只是为了容纳数据，可以是直接使用数组，为什么要学习集合？</span><br><span class="line">	//           数组使用起来不方便。在数据个数不确定的场合，数组使用起来不是很方便</span><br><span class="line">	</span><br><span class="line">	// 总结：对不确定的有关系的数据进行相同的逻辑处理的场合，使用集合是一个不错的选择</span><br><span class="line">	</span><br><span class="line">	// 根据数据的不同，Java的集合分为2大体系：</span><br><span class="line">	// 1. 单一数据体系 ： Collection接口定义了相关的规则</span><br><span class="line">	// 2. 成对出现的数据体系 ： Map接口定义了相关的规则</span><br><span class="line">	//    所谓的成对的数据，就是2个数据有关系，可以根据第一个数据关联到第二个数据</span><br><span class="line">	//    也称之为键值对数据 ，(123123, zhangsan) =&gt; (key, value)</span><br></pre></td></tr></table></figure>
 </code></pre>
 </li>
 </ul>
@@ -317,52 +403,13 @@
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><ul>
 <li><p>ArrayList</p>
 <ul>
-<li><p>基本操作</p>
-</li>
-<li><pre><code class="java">  //创建第一个集合对象：ArrayList
-  ArrayList list = new ArrayList(3);
-  // 1. 不需要传递构造参数，直接new就可以，底层数组为空数组
-  // 2. 构造参数需要传递一个int类型的值，用于设定底层数组的长度
-  // 3. 构造参数需要传递一个Collection集合类型的值，用于将其他集合中的数据放置在当前集合中
-  
-  // 增加数据
-  // add方法可以增加数据，只要将数据作为参数传递到add方法即可
-  // 添加数据时，如果集合中没有任何的数据，那么底层会创建长度为10的数组
-  list.add(&quot;zhangsan&quot;);
-  list.add(&quot;lisi&quot;);
-  // 获取集合中数据的条数
-  System.out.println(list.size());
-  // 获取指定位置的数据，可以采用索引的方式
-  System.out.println(list.get(1));
-  // 遍历集合中的数据
-  for ( int i = 0; i &lt; list.size(); i++ ) &#123;
-      //System.out.println(&quot;集合中的数据：&quot; + list.get(i));
-  &#125;
-  //如果循环遍历集合数据时，不关心数据的位置，那么可以采用特殊的for循环
-  // for (循环对象：集合) &#123;&#125;
-  for ( Object obj : list ) &#123;
-      System.out.println(&quot;集合中的数据：&quot; + obj);
-  &#125;
-  
-  //修改数据
-  // 将指定位置的数据进行修改,set方法需要传递2个参数，第一个参数表示数据的位置，第二个参数修改的值。
-  // 方法会返回结果，这个结果就是更新前的值
-  Object oldVal = list.set(1, &quot;lisi&quot;);
-  System.out.println(&quot;修改前的值：&quot; + oldVal);
-  
-  //删除数据
-  // 将指定位置的数据进行删除,remove方法需要传递1个参数，参数表示数据的位置。
-  // 方法会返回结果，这个结果就是删除的值
-  Object removeVal = list.remove(1);
-  System.out.println(&quot;删除的值：&quot; + removeVal);
-  
-  //打印集合对象
-  System.out.println(list);
-  
-  System.out.println(&quot;main方法执行完毕&quot;);
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 常用方法</span><br><span class="line"></span><br><span class="line">	```java</span><br><span class="line">	ArrayList list = new ArrayList();</span><br><span class="line">	</span><br><span class="line">	list.add(&quot;zhangsan&quot;);</span><br><span class="line">	list.add(&quot;lisi&quot;);</span><br><span class="line">	</span><br><span class="line">	// add方法可以传递2个参数的，第一个参数表示数据增加的位置（索引），第二个参数表示数据</span><br><span class="line">	list.add(1, &quot;zhaoliu&quot;);</span><br><span class="line">	</span><br><span class="line">	ArrayList otherList = new ArrayList();</span><br><span class="line">	otherList.add(&quot;1&quot;);</span><br><span class="line">	otherList.add(&quot;2&quot;);</span><br><span class="line">	otherList.add(&quot;3&quot;);</span><br><span class="line">	list.addAll( otherList );</span><br><span class="line">	</span><br><span class="line">	// size方法表示集合内部数据的数量</span><br><span class="line">	//System.out.println(list.size());</span><br><span class="line">	// 清空集合中的数据</span><br><span class="line">	//list.clear();</span><br><span class="line">	// 删除指定集合中的数据</span><br><span class="line">	//list.removeAll(otherList);</span><br><span class="line">	// 判断集合中的数据是否为空</span><br><span class="line">	//System.out.println(list.isEmpty());</span><br><span class="line">	</span><br><span class="line">	// 用于判断集合中是否存在某条数据，返回布尔类型的值</span><br><span class="line">	//System.out.println(list.contains(&quot;zhangsan123&quot;));</span><br><span class="line">	// 用于获取数据在索引中的第一个位置，如果数据不存在，那么返回-1</span><br><span class="line">	System.out.println(list.indexOf(&quot;zhangsan&quot;));</span><br><span class="line">	//最后一个位置</span><br><span class="line">	System.out.println(list.lastIndexOf(&quot;zhangsan&quot;));</span><br><span class="line">	// 集合转数组</span><br><span class="line">	Object[] objects = list.toArray();</span><br><span class="line">	// 复制新集合</span><br><span class="line">	Object clone = list.clone();</span><br><span class="line">	ArrayList list1 = (ArrayList)clone;</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<li>基本操作</li>
+</ul>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建第一个集合对象：ArrayList</span></span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// 1. 不需要传递构造参数，直接new就可以，底层数组为空数组</span></span><br><span class="line"><span class="comment">// 2. 构造参数需要传递一个int类型的值，用于设定底层数组的长度</span></span><br><span class="line"><span class="comment">// 3. 构造参数需要传递一个Collection集合类型的值，用于将其他集合中的数据放置在当前集合中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加数据</span></span><br><span class="line"><span class="comment">// add方法可以增加数据，只要将数据作为参数传递到add方法即可</span></span><br><span class="line"><span class="comment">// 添加数据时，如果集合中没有任何的数据，那么底层会创建长度为10的数组</span></span><br><span class="line">list.add(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;lisi&quot;</span>);</span><br><span class="line"><span class="comment">// 获取集合中数据的条数</span></span><br><span class="line">System.out.println(list.size());</span><br><span class="line"><span class="comment">// 获取指定位置的数据，可以采用索引的方式</span></span><br><span class="line">System.out.println(list.get(<span class="number">1</span>));</span><br><span class="line"><span class="comment">// 遍历集合中的数据</span></span><br><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; list.size(); i++ ) &#123;</span><br><span class="line">    <span class="comment">//System.out.println(&quot;集合中的数据：&quot; + list.get(i));</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果循环遍历集合数据时，不关心数据的位置，那么可以采用特殊的for循环</span></span><br><span class="line"><span class="comment">// for (循环对象：集合) &#123;&#125;</span></span><br><span class="line"><span class="keyword">for</span> ( Object obj : list ) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;集合中的数据：&quot;</span> + obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改数据</span></span><br><span class="line"><span class="comment">// 将指定位置的数据进行修改,set方法需要传递2个参数，第一个参数表示数据的位置，第二个参数修改的值。</span></span><br><span class="line"><span class="comment">// 方法会返回结果，这个结果就是更新前的值</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">oldVal</span> <span class="operator">=</span> list.set(<span class="number">1</span>, <span class="string">&quot;lisi&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;修改前的值：&quot;</span> + oldVal);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除数据</span></span><br><span class="line"><span class="comment">// 将指定位置的数据进行删除,remove方法需要传递1个参数，参数表示数据的位置。</span></span><br><span class="line"><span class="comment">// 方法会返回结果，这个结果就是删除的值</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">removeVal</span> <span class="operator">=</span> list.remove(<span class="number">1</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;删除的值：&quot;</span> + removeVal);</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印集合对象</span></span><br><span class="line">System.out.println(list);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;main方法执行完毕&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>常用方法</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line"></span><br><span class="line">list.add(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;lisi&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add方法可以传递2个参数的，第一个参数表示数据增加的位置（索引），第二个参数表示数据</span></span><br><span class="line">list.add(<span class="number">1</span>, <span class="string">&quot;zhaoliu&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">otherList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">otherList.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">otherList.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">otherList.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">list.addAll( otherList );</span><br><span class="line"></span><br><span class="line"><span class="comment">// size方法表示集合内部数据的数量</span></span><br><span class="line"><span class="comment">//System.out.println(list.size());</span></span><br><span class="line"><span class="comment">// 清空集合中的数据</span></span><br><span class="line"><span class="comment">//list.clear();</span></span><br><span class="line"><span class="comment">// 删除指定集合中的数据</span></span><br><span class="line"><span class="comment">//list.removeAll(otherList);</span></span><br><span class="line"><span class="comment">// 判断集合中的数据是否为空</span></span><br><span class="line"><span class="comment">//System.out.println(list.isEmpty());</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于判断集合中是否存在某条数据，返回布尔类型的值</span></span><br><span class="line"><span class="comment">//System.out.println(list.contains(&quot;zhangsan123&quot;));</span></span><br><span class="line"><span class="comment">// 用于获取数据在索引中的第一个位置，如果数据不存在，那么返回-1</span></span><br><span class="line">System.out.println(list.indexOf(<span class="string">&quot;zhangsan&quot;</span>));</span><br><span class="line"><span class="comment">//最后一个位置</span></span><br><span class="line">System.out.println(list.lastIndexOf(<span class="string">&quot;zhangsan&quot;</span>));</span><br><span class="line"><span class="comment">// 集合转数组</span></span><br><span class="line">Object[] objects = list.toArray();</span><br><span class="line"><span class="comment">// 复制新集合</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">clone</span> <span class="operator">=</span> list.clone();</span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">list1</span> <span class="operator">=</span> (ArrayList)clone;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
